@@ -20,6 +20,14 @@ export default {
   components: {
     NavBar,
     Carousel
+  },
+  mounted () {
+    window.$('a.ancla').click(function (e) {
+      e.preventDefault()
+      let ancla = window.$(this).attr('href')
+      var position = window.$(ancla).position()
+      window.$('html, body').animate({ scrollTop: (position.top) }, 1000)
+    })
   }
 }
 </script>
